@@ -1,0 +1,7 @@
+export GIT_EDITOR="mate -w"
+
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+HISTFILESIZE=1000000000 HISTSIZE=1000000
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
