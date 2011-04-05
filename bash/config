@@ -4,6 +4,7 @@ source ~/Documents/dotfiles/git/auto_complete.sh
 RED="\[\033[0;31m\]" 
 YELLOW="\[\033[0;33m\]" 
 GREEN="\[\033[0;32m\]" 
+WHITE="\[\033[1;37m\]"
 
 function parse_git_branch {
   # git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
@@ -20,4 +21,4 @@ git_status() {
 }
 
 
-PS1="$RED\\w$YELLOW\$(parse_git_branch)$GREEN\$ "
+PS1="$YELLOW\\w$RED\$(parse_git_branch)$WHITE\$ "
