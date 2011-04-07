@@ -3,14 +3,9 @@ alias ls='ls -G'
 alias ll='ls -lah'
 alias reload="source ~/Documents/dotfiles/bashrc"
 
-alias flash='cd ~/sauspiel/sauspiel-flash'
-alias oflash='flash && mate src/sauspiel/client'
-alias er='cd ~/sauspiel/sauspiel-er'
 alias reload_bundles="osascript -e 'tell app \"TextMate\" to reload bundles'"
-alias sshface="ssh deploy@facebook.sauspiel.de -i /Users/mk/.ssh/id_rsa2"
-alias tunnelskat="ssh -N -f -L 3388:192.168.40.104:3306 mkavalar@skatstube.de"
-alias sswww="ssh deploy@www.sauspiel.de -i /Users/mk/.ssh/id_rsa2"
-alias start_postgres="pg_ctl -D /Users/lkuhnt/Databases/postgres84/defaultdb -l /Users/mk/Databases/postgres84/pg.log start"
+alias pgc="pg_ctl -D $HOME/Databases/postgresql9 -l $HOME/Databases/postgresql9/postgresql.log $1"
+alias psn="ps aux | grep $1"
 
 # ruby, rails
 alias ett='mate app/ db/ lib/ config/ public/ spec/ test/ features/'
