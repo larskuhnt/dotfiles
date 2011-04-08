@@ -1,0 +1,19 @@
+[user]
+	name = Lars Kuhnt
+	email = lars.kuhnt@gmail.com
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	
+[core]
+	excludesfile = /Users/lkuhnt/.gitignore
+	editor = mate -w
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[merge]
+	tool = opendiff
