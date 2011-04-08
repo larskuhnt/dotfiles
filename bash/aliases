@@ -1,7 +1,7 @@
 # bash
 alias ls='ls -G'
 alias ll='ls -lah'
-alias reload="source ~/Documents/dotfiles/bashrc"
+alias reload="source ~/.dotfiles/bashrc"
 
 alias reload_bundles="osascript -e 'tell app \"TextMate\" to reload bundles'"
 alias pgc="pg_ctl -D $HOME/Databases/postgresql9 -l $HOME/Databases/postgresql9/postgresql.log $1"

@@ -1,4 +1,4 @@
-source ~/Documents/dotfiles/git/auto_complete.sh
+source ~/.dotfiles/git/auto_complete.sh
 
 
 RED="\[\033[0;31m\]" 
