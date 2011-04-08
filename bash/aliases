@@ -7,6 +7,9 @@ alias reload_bundles="osascript -e 'tell app \"TextMate\" to reload bundles'"
 alias pgc="pg_ctl -D $HOME/Databases/postgresql9 -l $HOME/Databases/postgresql9/postgresql.log $1"
 alias psn="ps aux | grep $1"
 
+alias pgtunnel="ssh skatstube.de -L 5433:pgmaster:5432"
+alias mysqltunnel="ssh sauspiel.de -L 3306:dbmaster:3307"
+
 # ruby, rails
 alias ett='mate app/ db/ lib/ config/ public/ spec/ test/ features/'
 alias r='rake'

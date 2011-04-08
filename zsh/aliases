@@ -1,1 +1,2 @@
 source ~/.dotfiles/bash/aliases
+alias reload="source ~/.dotfiles/zshrc"
