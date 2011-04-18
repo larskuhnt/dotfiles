@@ -17,3 +17,5 @@
 	status = auto
 [merge]
 	tool = opendiff
+[push]
+	default = current
