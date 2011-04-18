@@ -1,18 +1,25 @@
-require 'pp'
+require 'irb/completion'
+require 'irb/ext/save-history'
+require 'rubygems'
+require 'wirble'
+
 IRB.conf[:AUTO_INDENT]=true
 
-if defined?(Rails)
-  puts 'hello from irbrc'
-  ActiveRecord::Base.logger = ActiveResource::Base.logger = Logger.new(STDOUT)
-  
-  def sql(query)
-    ActiveRecord::Base.connection.execute(query).each do |result|
-      result.keys.sort.each do |key|
-        p "#{key.to_s.ljust(30)}#{result[key].to_s}"
-      end
-      p "====== "
-    end
+railsrc_path = File.expand_path('~/.railsrc')
+if ( ENV['RAILS_ENV'] || defined? Rails ) && File.exist?( railsrc_path )
+  begin
+    load railsrc_path
+  rescue Exception
+    warn "Could not load: #{ railsrc_path }" # because of $!.message
   end
-  
 end
 
+Wirble.init
+Wirble.colorize
+
+colors = Wirble::Colorize.colors.merge({
+ :object_class => :purple,
+ :symbol => :purple,
+ :symbol_prefix => :purple
+})
+Wirble::Colorize.colors = colors
