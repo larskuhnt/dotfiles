@@ -13,3 +13,5 @@ alias mysqltunnel="ssh -L 3307:dbmaster:3306 -N sauspiel.de"
 # ruby, rails
 alias ett='mate app/ db/ lib/ config/ public/ spec/ test/ features/'
 alias r='rake'
+
+alias vcprompt="~/.dotfiles/bin/vcprompt"
