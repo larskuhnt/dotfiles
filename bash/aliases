@@ -9,6 +9,14 @@ alias psn="ps aux | grep $1"
 
 alias pgtunnel="ssh -L 5433:pgmaster:5432 -N skatstube.de"
 alias mysqltunnel="ssh -L 3307:dbmaster:3306 -N sauspiel.de"
+alias couchtunnel="ssh -L 5984:10.118.19.17:5984 -N fuchstreff.de"
+
+
+HOME_HOST=kuhnt.homeftp.net
+ACHILLES_IP=192.168.178.42
+alias mpdtunnel="ssh -L 6600:$ACHILLES_IP:6600 -N $HOME_HOST"
+alias musictunnel="ssh -L 3689:$ACHILLES_IP:3689 -N $HOME_HOST"
+alias vnctunnel="ssh -L 5900:$ACHILLES_IP:5900 -N $HOME_HOST"
 
 # ruby, rails
 alias ett='mate app/ db/ lib/ config/ public/ spec/ test/ features/'

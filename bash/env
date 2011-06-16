@@ -5,3 +5,4 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 HISTFILESIZE=1000000000 HISTSIZE=1000000
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvmrc_trust" > /dev/null
