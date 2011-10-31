@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+mkdir -p lib/templates/erb/scaffold
+cd lib/templates/erb/scaffold
+curl -O https://raw.github.com/rails/rails/master/railties/lib/rails/generators/erb/scaffold/templates/_form.html.erb
+curl -O https://raw.github.com/rails/rails/master/railties/lib/rails/generators/erb/scaffold/templates/edit.html.erb
+curl -O https://raw.github.com/rails/rails/master/railties/lib/rails/generators/erb/scaffold/templates/index.html.erb
+curl -O https://raw.github.com/rails/rails/master/railties/lib/rails/generators/erb/scaffold/templates/new.html.erb
+curl -O https://raw.github.com/rails/rails/master/railties/lib/rails/generators/erb/scaffold/templates/show.html.erb
