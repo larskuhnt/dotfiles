@@ -8,7 +8,7 @@ alias pgc="pg_ctl -D $HOME/Databases/postgresql9 -l $HOME/Databases/postgresql9/
 alias psn="ps aux | grep $1"
 
 alias mysqltunnel="ssh -L 3307:localhost:3306 -N root@stampr.de"
-
+alias b="bundle exec"
 
 HOME_HOST=kuhnt.homeftp.net
 ACHILLES_IP=192.168.178.42
