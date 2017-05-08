@@ -1,7 +1,15 @@
-export GIT_EDITOR="mate -w"
+export GIT_EDITOR="subl -w"
 
-export PATH="/usr/local/bin:/usr/local/sbin:$HOME/.dotfiles/scripts:$HOME/Development/SDKs/android-sdk/platform-tools:$PATH"
+export ANDROID_HOME="$HOME/Development/android-sdk-macosx"
+
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.dotfiles/scripts:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+
+export NODE_PATH="/usr/local/lib/node_modules"
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 HISTFILESIZE=1000000000 HISTSIZE=1000000
 
-eval "$(rbenv init -)"
+export JRUBY_OPTS='--1.9 -J-Djruby.reify.classes=true'
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

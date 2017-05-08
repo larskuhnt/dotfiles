@@ -1,0 +1,2 @@
+export rvm_gem_options="--no-rdoc --no-ri"
+export rvm_archflags="-arch x86_64"

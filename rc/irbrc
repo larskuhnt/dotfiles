@@ -1,7 +1,7 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
-require 'wirble'
+require 'brice'
 
 IRB.conf[:AUTO_INDENT]=true
 
@@ -14,12 +14,4 @@ if ( ENV['RAILS_ENV'] || defined? Rails ) && File.exist?( railsrc_path )
   end
 end
 
-Wirble.init
-Wirble.colorize
-
-colors = Wirble::Colorize.colors.merge({
- :object_class => :purple,
- :symbol => :purple,
- :symbol_prefix => :purple
-})
-Wirble::Colorize.colors = colors
+Brice.init

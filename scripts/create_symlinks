@@ -1,0 +1,18 @@
+#!/bin/bash
+unlink ~/.bashrc
+unlink ~/.gemrc
+unlink ~/.zshrc
+unlink ~/.irbrc
+unlink ~/.inputrc
+unlink ~/.rvmrc
+unlink ~/.gitconfig
+unlink ~/.gitignore
+
+ln -s ~/.dotfiles/rc/bashrc      ~/.bashrc
+ln -s ~/.dotfiles/rc/gemrc       ~/.gemrc
+ln -s ~/.dotfiles/rc/zshrc       ~/.zshrc
+ln -s ~/.dotfiles/rc/irbrc       ~/.irbrc
+ln -s ~/.dotfiles/rc/inputrc     ~/.inputrc
+ln -s ~/.dotfiles/rc/rvmrc       ~/.rvmrc
+ln -s ~/.dotfiles/rc/gitconfig   ~/.gitconfig
+ln -s ~/.dotfiles/rc/gitignore   ~/.gitignore

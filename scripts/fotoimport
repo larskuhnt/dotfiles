@@ -1,0 +1,49 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "$SRC" ]; then
+  SRC=/Volumes/FOTOS/Import
+fi
+
+if [ -z "$FOTO_DST" ]; then
+  FOTO_DST=/Volumes/FOTOS/Bilder
+fi
+
+if [ -z "$VIDEO_DST" ]; then
+  VIDEO_DST=/Volumes/FOTOS/Videos
+fi
+
+mkdir -p "$FOTO_DST" "$VIDEO_DST"
+
+function copy_file {
+  platform=$(uname)
+  if [ "$platform" == "Darwin" ]; then
+    eval $(stat -s "$1")
+    YEAR=$(date -r $st_birthtime +%Y)
+    MONTH=$(date -r $st_birthtime +%m)
+  else
+    YEAR=$(date -r "$file" +%Y)
+    MONTH=$(date -r "$file" +%m)
+  fi
+  mkdir -p "$2/$YEAR/$MONTH"
+  filename=$(basename "$file")
+  if [ -f "$2/$YEAR/$MONTH/$filename" ]; then
+    echo "File $2/$YEAR/$MONTH/$filename exists"
+  else
+    cp -vpf "$file" "$2/$YEAR/$MONTH"
+  fi
+}
+
+find "$SRC" -type f -iname '*.jpg' -print0 | while read -d $'\0' file
+do
+  copy_file "$file" "$FOTO_DST"
+done
+chmod 644 $VIDEO_DST/$YEAR/**/*
+
+find "$SRC" -type f -iname '*.mp4' -print0 | while read -d $'\0' file
+do
+  copy_file "$file" "$VIDEO_DST"
+done
+chmod 644 $FOTO_DST/$YEAR/**/*
+

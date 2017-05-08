@@ -1,0 +1,52 @@
+#!/bin/sh
+
+env=development
+
+case "$1" in
+  'start')
+    bundle exec thin start -e $env -d --pid tmp/pids/thin.pid --socket tmp/sockets/thin.sock
+  ;;
+  
+  'stop')
+    bundle exec thin stop
+  ;;
+  
+  'restart')
+    if [ -f tmp/pids/thin.pid ]; then
+      thin_ctl stop && thin_ctl start
+    else
+      bundle exec thin start -e $env -d --pid tmp/pids/thin.pid --socket tmp/sockets/thin.sock
+    fi
+  ;;
+  
+  *)
+    echo 'usage: thin_ctl (start|stop|restart)'
+  ;;
+  
+esac
+
+# stime=10
+# pid="tmp/pids/thin.tmp.pid"
+# socket="tmp/sockets/thin.tmp.sock"
+# echo "--> starting new server instance"
+# bundle exec thin start -e $env -d --pid $pid --socket $socket
+# echo "--> waiting $stime seconds to load the environment"
+# sleep $stime
+# echo "--> stopping the old server instance"
+# if [ -f $pid ]; then
+#   # there is a tmp pid use that to stop the server
+#   bundle exec thin stop --pid $pid
+# else
+#   bundle exec thin stop --pid tmp/pids/thin.pid
+# fi
+# if [ $? == 1 ]; then
+#   echo 'ERROR: the server could not be stopped!'
+#   exit 1
+# else  
+#   echo "thin.tmp.pid $(cat $pid)"
+#   echo "--> switch to new server instance"
+#   ln -f $pid tmp/pids/thin.pid
+#   ln -f $socket tmp/sockets/thin.sock
+#   echo "new thin.pid $(cat tmp/pids/thin.pid)"
+#   echo "--> done"
+# fi

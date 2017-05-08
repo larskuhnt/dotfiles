@@ -1,0 +1,19 @@
+#!/bin/sh
+
+VM_NAME="Ubuntu Server"
+
+case "$1" in
+  start)
+  VBoxManage startvm --type headless "$VM_NAME"
+  ;;
+  save)
+  VBoxManage controlvm "$VM_NAME" savestate
+  ;;
+  stop)
+  VBoxManage controlvm "$VM_NAME" poweroff
+  ;;
+  *)
+  echo "Usage: vserver {start|save|stop}" >&2
+  exit 3
+  ;;
+esac

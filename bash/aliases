@@ -16,8 +16,23 @@ alias mpdtunnel="ssh -L 6600:$ACHILLES_IP:6600 -N $HOME_HOST"
 alias musictunnel="ssh -L 3689:$ACHILLES_IP:3689 -N $HOME_HOST"
 alias vnctunnel="ssh -L 5900:$ACHILLES_IP:5900 -N $HOME_HOST"
 
+alias ewstunnel="ssh -N 10.2.208.2 -L 8091:10.2.204.38:8091"
+alias unitunnel="ssh -p 4444 -N 127.0.0.1 -L 8090:10.2.204.114:8090"
+alias unitunnel_production="ssh -p 4444 -N 127.0.0.1 -L 8089:10.2.204.118:8089"
+alias unitunnel1="ssh -N 10.2.208.4 -L 8090:10.2.204.114:8090"
+
 # ruby, rails
 alias ett='mate app/ db/ lib/ config/ public/ spec/ test/ features/'
 alias r='rake'
 
 alias vcprompt="~/.dotfiles/bin/vcprompt"
+
+alias timer="sudo shutdown -h"
+
+alias wl="mate '$HOME/Dropbox (Privat)/worklog.md'"
+
+alias ssh-defk="ssh deploy@experimental.fliesen-kemmler.de"
+alias ssh-efk="ssh experimental.fliesen-kemmler.de"
+
+VISUAL='subl -w -n'
+EDITOR=$VISUAL

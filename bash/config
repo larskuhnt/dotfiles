@@ -1,24 +1,24 @@
-source ~/.dotfiles/git/auto_complete.sh
+source $HOME/.dotfiles/git/git_ac.sh
 
-
-RED="\[\033[0;31m\]" 
-YELLOW="\[\033[0;33m\]" 
-GREEN="\[\033[0;32m\]" 
-WHITE="\[\033[1;37m\]"
+RED="\[\033[00;31m\]" 
+YELLOW="\[\033[00;33m\]" 
+GREEN="\[\033[00;32m\]" 
+WHITE="\[\033[00;37m\]"
+BOLD_GREEN="\[\033[01;32m\]" 
 
 function parse_git_branch {
   # git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
   branch_prompt=$(__git_ps1)
   if [ -n "$branch_prompt" ]; then
-    echo "$branch_prompt $(git_status)"
+    echo "$branch_prompt"
   fi
 }
 
 git_status() {
   if current_git_status=$(git status | grep 'added to commit' 2> /dev/null); then
-    echo '☢ '
+    echo '✦ '
   fi
 }
 
 
-PS1="$YELLOW\\w$RED\$(parse_git_branch)$WHITE\$ "
+PS1="\\w$WHITE$BOLD_GREEN\$(parse_git_branch) → $WHITE"

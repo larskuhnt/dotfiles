@@ -1,0 +1,16 @@
+#!/bin/bash
+
+S2_HOME=/Volumes/S2
+# SYNCTO=kuhnt.homeftp.net:/media/achilles/S2
+# SYNCTO=achilles.local:/media/achilles/S2
+SYNCTO=/Users/lkuhnt/Pictures/S2
+SPATH=
+OPTS=-auzhv
+
+mkdir -p $SYNCTO/Fotos
+mkdir -p $SYNCTO/Videos
+
+rsync $OPTS $S2_HOME/Vignette/         $SYNCTO/Fotos/
+rsync $OPTS $S2_HOME/retroCamera/      $SYNCTO/Fotos/
+rsync $OPTS $S2_HOME/DCIM/Camera/*.jpg $SYNCTO/Fotos/
+rsync $OPTS $S2_HOME/DCIM/Camera/*.mp4 $SYNCTO/Videos/

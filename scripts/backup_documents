@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd ~/Documents
+rsync -auv --exclude 'iChats' --exclude 'Software' --exclude 'openVPN' ./ /Volumes/sd2dav.1und1.de/Lars/Documents/
