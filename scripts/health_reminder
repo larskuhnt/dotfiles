@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# crontab entry
+# 15,45 9-16 * * 1-5 /Users/lkuhnt/.dotfiles/scripts/health_reminder
+
+osascript -e 'display notification "Das Glas steht direkt neben dir." with title "Trink Wasser!"'
+/usr/local/bin/blink1-tool --rgb=255,0,0 --glimmer=50 > /dev/null

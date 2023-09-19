@@ -1,7 +1,6 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
 require 'rubygems'
-require 'brice'
 
 IRB.conf[:AUTO_INDENT]=true
 
@@ -14,4 +13,3 @@ if ( ENV['RAILS_ENV'] || defined? Rails ) && File.exist?( railsrc_path )
   end
 end
 
-Brice.init

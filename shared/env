@@ -1,0 +1,19 @@
+export CLICOLOR=1
+export EDITOR="code -w"
+export GIT_EDITOR="code -w"
+
+export ANDROID_HOME="$HOME/Development/android-sdk"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="/usr/local/opt/openssl@1.1/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/postgresql@11/bin:/usr/local/opt/mysql@5.7/bin:/usr/local/opt/qt/bin:$PATH:$HOME/.dotfiles/scripts:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+
+export NODE_PATH="/usr/local/lib/node_modules"
+
+export GOPATH=$HOME/Projects/go
+export PATH=$PATH:$GOPATH/bin
+export CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL="https://services.gradle.org/distributions/gradle-5.1.1-all.zip"
+
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.1/lib/pkgconfig"
+
+export PROMPTUS_ANSIBLE_PATH=$HOME/Projects/promptus/ansible

@@ -10,7 +10,8 @@
 	
 [core]
 	excludesfile = /Users/lkuhnt/.gitignore
-	editor = subl -w -n
+	editor = code -w -n
+	ignorecase = false
 [color]
 	branch = auto
 	diff = auto
@@ -22,3 +23,5 @@
 	default = tracking
 [github]
 	user = larskuhnt
+[pull]
+	rebase = true

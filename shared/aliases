@@ -3,7 +3,6 @@ alias ls='ls -G'
 alias ll='ls -lah'
 alias reload="source ~/.dotfiles/bashrc"
 
-alias reload_bundles="osascript -e 'tell app \"TextMate\" to reload bundles'"
 alias pgc="pg_ctl -D $HOME/Databases/postgresql9 -l $HOME/Databases/postgresql9/postgresql.log $1"
 alias psn="ps aux | grep $1"
 
@@ -16,23 +15,25 @@ alias mpdtunnel="ssh -L 6600:$ACHILLES_IP:6600 -N $HOME_HOST"
 alias musictunnel="ssh -L 3689:$ACHILLES_IP:3689 -N $HOME_HOST"
 alias vnctunnel="ssh -L 5900:$ACHILLES_IP:5900 -N $HOME_HOST"
 
-alias ewstunnel="ssh -N 10.2.208.2 -L 8091:10.2.204.38:8091"
-alias unitunnel="ssh -p 4444 -N 127.0.0.1 -L 8090:10.2.204.114:8090"
-alias unitunnel_production="ssh -p 4444 -N 127.0.0.1 -L 8089:10.2.204.118:8089"
-alias unitunnel1="ssh -N 10.2.208.4 -L 8090:10.2.204.114:8090"
+alias ewstunnel="ssh -N tilepad-staging -L 8091:10.2.204.38:8091"
+alias unitunnel="ssh -NL 8090:wsipadtest.kemsys.de:8090 shop-staging"
+alias unitunnel_production="ssh -NL 8089:wsipad.kemsys.de:8089 shop-production"
+alias unidoctunnel_production="ssh -NL 8189:wskadisdoc.kemsys.de:8089 kadis-production"
+alias unitunnel1="ssh -N tilepad-staging -L 8090:10.2.204.114:8090"
+alias tactunnel="ssh -NL 40001:62.134.53.142:40001 deploy@hotel-mssngr.com"
+alias wifi='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport'
 
 # ruby, rails
-alias ett='mate app/ db/ lib/ config/ public/ spec/ test/ features/'
 alias r='rake'
-
-alias vcprompt="~/.dotfiles/bin/vcprompt"
 
 alias timer="sudo shutdown -h"
 
-alias wl="mate '$HOME/Dropbox (Privat)/worklog.md'"
+alias wl="code '$HOME/Dropbox (Privat)/worklog.md'"
 
 alias ssh-defk="ssh deploy@experimental.fliesen-kemmler.de"
 alias ssh-efk="ssh experimental.fliesen-kemmler.de"
 
-VISUAL='subl -w -n'
+alias dm-disk='docker run --rm -it -v /:/docker alpine:edge $@'
+
+VISUAL='code -w -n'
 EDITOR=$VISUAL
